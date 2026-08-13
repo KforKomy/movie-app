@@ -5,7 +5,7 @@ const Movie=({img,movieName,releaseDate})=>{
 
         <div className="movie-container">
            <div className="poster">
-            <img src={`${img}`} alt="venom" />
+            <img src={`${img}`} alt="film poster" />
             <button className="fav-btn">❤︎⁠</button>
            </div>
            <div className="movie-text">

@@ -2,7 +2,7 @@ import "./hero.css";
 import Movie from "./Movie";
 
 const Hero = ({ movies = [] }) => {
-    movies.push({img:`/images.jpg` , movieName:`Venom: The Last Dance` , releaseDate:2024})
+    
   return (
     <div className="hero-container">
       <div className="movies-grid">
@@ -10,9 +10,9 @@ const Hero = ({ movies = [] }) => {
           movies.map((movie, index) => (
             <Movie
               key={index}
-              img={movie.img}
-              movieName={movie.movieName}
-              releaseDate={movie.releaseDate}
+              img={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              movieName={movie.title}
+              releaseDate={movie.release_date.split("-")[0]}
             />
           ))
         ) : (

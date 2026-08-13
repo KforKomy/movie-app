@@ -5,6 +5,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     padding-block: 0.8rem;
+    width:100dvw;
 
 }
 h1{
@@ -12,6 +13,7 @@ h1{
     font-family: "Roboto", sans-serif;
     font-size: 1.7rem;
     padding-inline-start: 3rem;
+    cursor:default;
 
 }
 a{
@@ -20,5 +22,9 @@ a{
     font-size:1.3rem;
     text-decoration: none;
     margin-inline:1rem;
+    transition: color 0.2s ease;
 
+}
+a:hover{
+    color:rgb(133, 39, 248);
 }
