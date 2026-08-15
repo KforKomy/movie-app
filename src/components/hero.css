@@ -6,8 +6,8 @@
 
 .movies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 100px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -24,23 +24,39 @@
 @media (max-width: 1024px) {
   .movies-grid {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  }
-}
-
-@media (max-width: 768px) {
-  .movies-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 15px;
   }
 }
 
-@media (max-width: 480px) {
-  .movies-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 30px 15px;
   }
 
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
   .hero-container {
     padding: 20px 10px;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    padding: 15px 8px;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 8px;
   }
 }
