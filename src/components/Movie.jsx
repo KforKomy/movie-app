@@ -1,12 +1,17 @@
 import "./movie.css"
-const Movie=({img,movieName,releaseDate})=>{
+import{toggleFavourites} from "../utils/toggleFavourites"
+const Movie=({img,movieName,releaseDate,setFavMovies})=>{
     return(
         <>
 
         <div className="movie-container">
            <div className="poster">
             <img src={`${img}`} alt="film poster" />
-            <button className="fav-btn">❤︎⁠</button>
+            <button className="fav-btn" onClick={()=>{
+               setFavMovies((prev)=>{
+                return toggleFavourites(prev,{img,movieName,releaseDate})
+               })
+            }}>❤︎⁠</button>
            </div>
            <div className="movie-text">
             <h4>{movieName}</h4>

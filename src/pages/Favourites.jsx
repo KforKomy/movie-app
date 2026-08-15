@@ -1,11 +1,12 @@
 import Header from "../components/Header"
-import { useState } from "react"
-const Favourites=()=>{
+import FavHero from "../components/FavHero"
+const Favourites=({favMovies,setFavMovies})=>{
     
     return(
         <>
         <Header/>
-        <h1>TESTOO</h1>
+        <FavHero favMovies={favMovies} setFavMovies={setFavMovies}/>
+        
         </>
     )
 

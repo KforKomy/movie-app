@@ -1,7 +1,7 @@
 import "./hero.css";
 import Movie from "./Movie";
 
-const Hero = ({ movies = [] }) => {
+const Hero = ({ movies = [],setFavMovies }) => {
     
   return (
     <div className="hero-container">
@@ -13,6 +13,7 @@ const Hero = ({ movies = [] }) => {
               img={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               movieName={movie.title}
               releaseDate={movie.release_date.split("-")[0]}
+              setFavMovies={setFavMovies}
             />
           ))
         ) : (
