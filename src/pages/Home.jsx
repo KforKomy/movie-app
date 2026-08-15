@@ -13,7 +13,7 @@ const Home=({setFavMovies , setSearchResult})=>{
     useEffect(()=>{
         fetchMovies(setMovies,BASE_URL,API_KEY,page);
         scrollTop();
-    }, [page])
+    }, [page,])
 return(
     <>
      <Header setPage={setPage} />

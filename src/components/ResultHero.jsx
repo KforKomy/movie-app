@@ -1,4 +1,4 @@
-import { useState } from "react"
+
 import Movie from "./Movie"
 import "./resulthero.css"
 const ResultHero=({searchResult,setFavMovies})=>{
