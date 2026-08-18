@@ -1,12 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 .movie-container {
   background-color: rgba(20, 19, 19, 0.6);
   height: auto;
   width: fit-content;
   transition: transform 0.4s ease;
 }
-.movie-container:hover{
+.movie-container:hover {
   transform: translatey(-20px);
+  cursor: pointer;
 }
 
 .poster {
@@ -36,7 +37,12 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s ease;
+  transition: color 0.1s ease;
   cursor: pointer;
+}
+
+.fav-btn.favorite {
+  color: red;
 }
 
 .fav-btn:hover {
@@ -49,7 +55,7 @@
   visibility: visible;
 }
 
-/* Show button on touch devices */
+
 @media (hover: none) and (pointer: coarse) {
   .fav-btn {
     opacity: 1;
@@ -58,26 +64,26 @@
   }
 }
 
-.movie-text{
-    padding: 0.8rem 0.5rem;
-    color: white;
-    font-family: "Roboto", sans-serif;
+.movie-text {
+  padding: 0.8rem 0.5rem;
+  color: white;
+  font-family: "Roboto", sans-serif;
 }
 
-.movie-text h4{
-    padding-bottom: 0.4rem;
-    margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.2;
-    white-space: normal;
-    word-break: break-word;
+.movie-text h4 {
+  padding-bottom: 0.4rem;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  white-space: normal;
+  word-break: break-word;
 }
 
-.movie-text h5{
-    margin: 0;
-    color: rgb(155, 150, 150);
-    font-size: 0.85rem;
-    font-weight: 400;
+.movie-text h5 {
+  margin: 0;
+  color: rgb(155, 150, 150);
+  font-size: 0.85rem;
+  font-weight: 400;
 }
 
 /* Mobile optimization */

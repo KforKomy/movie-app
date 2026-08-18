@@ -1,18 +1,21 @@
 import "./hero.css";
 import Movie from "./Movie";
 
-const Hero = ({ movies = [],setFavMovies }) => {
-    
+const Hero = ({ movies = [], favMovies = [], setFavMovies }) => {
   return (
     <div className="hero-container">
       <div className="movies-grid">
         {movies.length > 0 ? (
           movies.map((movie, index) => (
             <Movie
-              key={index}
+              key={movie.id || index}
               img={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               movieName={movie.title}
-              releaseDate={movie.release_date.split("-")[0]}
+              releaseDate={
+                movie.release_date ? movie.release_date.split("-")[0] : "N/A"
+              }
+              movieId={movie.id}
+              favMovies={favMovies}
               setFavMovies={setFavMovies}
             />
           ))
