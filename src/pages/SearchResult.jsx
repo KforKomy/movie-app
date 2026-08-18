@@ -1,9 +1,11 @@
 import Header from "../components/Header";
 import ResultHero from "../components/ResultHero";
-const SearchResult = ({ favMovies, searchResult, setFavMovies }) => {
+import Search from "../components/Search"
+const SearchResult = ({ favMovies, searchResult, setFavMovies,page="",setSearchResult }) => {
   return (
     <>
       <Header />
+      <Search page={page} setSearchResult={setSearchResult} />
       <ResultHero
         favMovies={favMovies}
         searchResult={searchResult}

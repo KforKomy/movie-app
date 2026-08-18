@@ -40,6 +40,7 @@ const App = () => {
                 favMovies={favMovies}
                 searchResult={searchResult}
                 setFavMovies={setFavMovies}
+                setSearchResult={setSearchResult}
               />
             }
           />

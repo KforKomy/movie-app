@@ -3,30 +3,21 @@ import { toggleFavourites } from "../utils/toggleFavourites";
 import { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Movie = ({
-  img,
-  movieName,
-  releaseDate,
-  setFavMovies,
-  favMovies = [],
-  movieId,
-}) => {
+const Movie = ({img,movieName,releaseDate,setFavMovies,favMovies = [],movieId,}) => {
   const favBtnRef = useRef(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (favBtnRef.current && favMovies) {
+    if (favBtnRef.current) {
       const isFavorite = favMovies.some((m) => m.movieName === movieName);
-      if (isFavorite) {
-        favBtnRef.current.classList.add("favorite");
-      } else {
-        favBtnRef.current.classList.remove("favorite");
-      }
+      favBtnRef.current.classList.toggle("favorite", isFavorite);
     }
-  }, [favMovies, movieName]);
+  }, [favMovies]);
 
   const handleFavClick = (event) => {
-    event.stopPropagation();
+    event?.stopPropagation();
+    event?.preventDefault();
+
     setFavMovies((prev) => {
       const updated = toggleFavourites(prev, {
         img,
@@ -59,7 +50,12 @@ const Movie = ({
     >
       <div className="poster">
         <img src={`${img}`} alt="film poster" />
-        <button className="fav-btn" ref={favBtnRef} onClick={handleFavClick}>
+        <button
+          type="button"
+          className="fav-btn"
+          ref={favBtnRef}
+          onClick={handleFavClick}
+        >
           ❤︎⁠
         </button>
       </div>
